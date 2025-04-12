@@ -45,12 +45,6 @@ cd server
 npm install
 ```
 
-Update the `.env` file with your OpenWeatherMap API key:
-
-```
-PORT=5000
-OPENWEATHER_API_KEY=your_api_key_here
-```
 
 ### 3. Frontend Setup
 
@@ -91,7 +85,6 @@ The React app will run on http://localhost:3000
 ## Important Notes
 
 - The backend must be running for the application to fetch weather data
-- You must use a valid OpenWeatherMap API key in the .env file
 - If you get a "City not found" error, check that you spelled the city name correctly
 
 ## API Endpoints
@@ -111,16 +104,3 @@ The React app will run on http://localhost:3000
 - Axios for external API requests
 - dotenv for environment variables
 - CORS for cross-origin requests
-
-## Troubleshooting
-
-If you encounter any issues:
-
-1. Make sure both the server and client are running
-2. Check that your OpenWeatherMap API key is valid
-3. Ensure you're using Node.js v14 or higher
-4. Verify that the ports 3000 and 5000 are not being used by other applications
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE). 
