@@ -15,15 +15,8 @@ router.get('/', async (req, res) => {
       return res.status(400).json({ message: 'City parameter is required' });
     }
     
-    const API_KEY = process.env.OPENWEATHER_API_KEY;
-    
-    if (!API_KEY) {
-      return res.status(500).json({ message: 'OpenWeatherMap API key is not configured' });
-    }
-    
     // Make request to OpenWeatherMap API
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8a89f85a405f693f12ba820cbd7ae6ce&units=metric`;
-    // console.log(apiKey);
 
     const response = await axios.get(url);  
     
