@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     }
     
     // Make request to OpenWeatherMap API
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ace23f237695b67561fe1768627a7777&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8a89f85a405f693f12ba820cbd7ae6ce&units=metric`;
     // console.log(apiKey);
 
     const response = await axios.get(url);  
