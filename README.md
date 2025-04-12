@@ -15,7 +15,17 @@ A real-time weather application built with the MERN stack (MongoDB, Express, Rea
 ```
 weather-dashboard/
 ├── client/ # React Frontend
+│ ├── src/
+│ │ ├── components/ # WeatherCard, SearchBar, etc.
+│ │ ├── App.js
+│ │ └── index.js
+│ └── package.json
 ├── server/ # Node.js Backend
+│ ├── routes/
+│ │ └── weather.js # /weather endpoint logic
+│ ├── server.js
+│ └── package.json
+├── .gitignore
 └── README.md
 ```
 
