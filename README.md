@@ -1,85 +1,116 @@
-# Real-Time Weather Dashboard
+# Weather Dashboard
 
-A full-stack MERN application that displays real-time weather data from the OpenWeatherMap API.
+A real-time weather application built with the MERN stack (MongoDB, Express, React, Node.js) that allows users to search for weather information by city name.
+
+## Features
+
+- Search for weather by city name
+- Display current temperature, weather conditions, humidity, and wind speed
+- Clean, responsive UI that works on both desktop and mobile
+- Real-time data from OpenWeatherMap API
+
 
 ## Project Structure
 
 ```
 weather-dashboard/
 ├── client/ # React Frontend
-│   ├── src/
-│   │   ├── components/ # WeatherCard, SearchBar components
-│   │   ├── App.js      # Main application component
-│   │   └── App.css     # Styles for the application
-│   └── package.json    # Frontend dependencies
 ├── server/ # Node.js Backend
-│   ├── routes/
-│   │   └── weather.js  # /api/weather endpoint logic
-│   ├── server.js       # Express server setup
-│   ├── .env            # Environment variables
-│   └── package.json    # Backend dependencies
-└── README.md           # Project documentation
+└── README.md
 ```
 
-## Setup and Installation
+## Installation
 
-### Prerequisites
+### 1. Clone the repository
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-- OpenWeatherMap API key (get one at https://openweathermap.org/appid)
+```
+git clone <repository-url>
+cd weather-dashboard
+```
 
-### Backend Setup
+### 2. Backend Setup
 
-1. Navigate to the server directory:
-   ```
-   cd server
-   ```
+```
+cd server
+npm install
+```
 
-2. Install dependencies:
-   ```
-   npm install
-   ```
+Update the `.env` file with your OpenWeatherMap API key:
 
-3. Create a `.env` file and add your OpenWeatherMap API key:
-   ```
-   PORT=5000
-   OPENWEATHER_API_KEY=your_api_key_here
-   ```
+```
+PORT=5000
+OPENWEATHER_API_KEY=your_api_key_here
+```
 
-4. Start the server:
-   ```
-   npm run dev
-   ```
+### 3. Frontend Setup
 
-### Frontend Setup
+```
+cd ../client
+npm install
+```
 
-1. Navigate to the client directory:
-   ```
-   cd client
-   ```
+## Running the Application
 
-2. Install dependencies:
-   ```
-   npm install
-   ```
+### Start the Backend Server
 
-3. Start the React development server:
-   ```
-   npm start
-   ```
+```
+cd server
+npm start
+```
 
-4. Open your browser and navigate to `http://localhost:3000`
+The server will run on http://localhost:5000
 
-## Features
+### Start the Frontend Application
 
-- Search for weather by city name
-- Display current temperature, weather conditions, humidity, and wind speed
-- Responsive design that works on desktop and mobile devices
-- Error handling for invalid city names or API issues
+Open a new terminal window:
+
+```
+cd client
+npm start
+```
+
+The React app will run on http://localhost:3000
+
+## How to Use
+
+1. Open your browser and go to http://localhost:3000
+2. Enter a city name in the search box
+3. Click the "Search" button
+4. View the weather information for the specified city
+
+## Important Notes
+
+- The backend must be running for the application to fetch weather data
+- You must use a valid OpenWeatherMap API key in the .env file
+- If you get a "City not found" error, check that you spelled the city name correctly
+
+## API Endpoints
+
+- `GET /api/weather?city=cityname`: Returns weather data for the specified city
 
 ## Technologies Used
 
-- **Frontend:** React, Axios, CSS
-- **Backend:** Node.js, Express
-- **API:** OpenWeatherMap API 
+### Frontend
+- React
+- Axios for API requests
+- CSS for styling
+
+### Backend
+- Node.js
+- Express
+- Axios for external API requests
+- dotenv for environment variables
+- CORS for cross-origin requests
+
+## Troubleshooting
+
+If you encounter any issues:
+
+1. Make sure both the server and client are running
+2. Check that your OpenWeatherMap API key is valid
+3. Ensure you're using Node.js v14 or higher
+4. Verify that the ports 3000 and 5000 are not being used by other applications
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE). 
